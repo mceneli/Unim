@@ -10,7 +10,7 @@
         android:id="@+id/emailText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="100dp"
         android:ems="10"
         android:hint="@string/Email"
         android:inputType="textPersonName"

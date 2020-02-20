@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GirisYapActivity"></activity>
+        <activity android:name=".YeniParolaActivity"></activity>
+        <activity android:name=".GirisYapActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".UyeOlActivity">
             <intent-filter>

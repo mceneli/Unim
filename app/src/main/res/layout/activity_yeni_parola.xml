@@ -4,35 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".YeniParolaActivity">
 
-    <TextView
-        android:id="@+id/welcomeText"
+    <EditText
+        android:id="@+id/emailSifirlaText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="TextView"
+        android:ems="10"
+        android:hint="@string/Email"
+        android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/kullaniciSil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/kullaniciSil"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeText" />
-
-    <Button
-        android:id="@+id/cikisYap"
+        android:id="@+id/yeniParolaButton"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/cikisyap"
+        android:text="Yeni Parola Bağlantısını Gönder!"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kullaniciSil" />
+        app:layout_constraintTop_toBottomOf="@+id/emailSifirlaText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

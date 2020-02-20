@@ -27,6 +27,7 @@ public class UyeOlActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         Button uyeButton = findViewById(R.id.uyeOlButton);
+        Button girisButton = findViewById(R.id.girisYapButton);
 
         uyeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,7 +67,12 @@ public class UyeOlActivity extends AppCompatActivity {
             }
         });
 
-
+        girisButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(UyeOlActivity.this,GirisYapActivity.class));
+            }
+        });
 
     }
 }
