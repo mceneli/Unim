@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "325660572148",
+    "firebase_url": "https://unim-d522b.firebaseio.com",
+    "project_id": "unim-d522b",
+    "storage_bucket": "unim-d522b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:325660572148:android:e918941764e4f6a0b6e1a1",
+        "android_client_info": {
+          "package_name": "com.haydideneyelim.unim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "325660572148-e9pc17rkspvlc9hbpn83nh9qg2uugjdt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.haydideneyelim.unim",
+            "certificate_hash": "f2ab8946afec648500248d0e6aca607d09874028"
+          }
+        },
+        {
+          "client_id": "325660572148-stcjtb2nddfbe4pn33e8q5jej2k5dklf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxS-u_8Rfud98H8gnDPC7k89wRQFDdrt8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "325660572148-stcjtb2nddfbe4pn33e8q5jej2k5dklf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

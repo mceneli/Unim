@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UyeOlActivity">
+
+    <EditText
+        android:id="@+id/emailText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:ems="10"
+        android:hint="@string/Email"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/parolaText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="@string/Parola"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/emailText"
+        app:layout_constraintTop_toBottomOf="@+id/emailText" />
+
+    <Button
+        android:id="@+id/uyeOlButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Üye Ol!"
+        app:layout_constraintEnd_toEndOf="@+id/parolaText"
+        app:layout_constraintStart_toStartOf="@+id/parolaText"
+        app:layout_constraintTop_toBottomOf="@+id/parolaText" />
+
+    <Button
+        android:id="@+id/girisYapButton"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:text="Zaten üye misin?"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/parolaText"
+        app:layout_constraintStart_toStartOf="@+id/parolaText"
+        app:layout_constraintTop_toBottomOf="@+id/uyeOlButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
