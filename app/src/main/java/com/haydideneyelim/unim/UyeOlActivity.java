@@ -11,14 +11,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.GoogleAuthProvider;
 
 public class UyeOlActivity extends AppCompatActivity {
     private FirebaseAuth auth;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,11 @@ public class UyeOlActivity extends AppCompatActivity {
         setContentView(R.layout.activity_uye_ol);
 
         auth = FirebaseAuth.getInstance();
+
+        if(auth.getCurrentUser() != null){
+            startActivity(new Intent(UyeOlActivity.this,MainActivity.class));
+        }
+
         Button uyeButton = findViewById(R.id.uyeOlButton);
         Button girisButton = findViewById(R.id.girisYapButton);
 
@@ -75,4 +82,5 @@ public class UyeOlActivity extends AppCompatActivity {
         });
 
     }
+
 }

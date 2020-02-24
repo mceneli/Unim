@@ -43,12 +43,11 @@ public class GirisYapActivity extends AppCompatActivity{
         final EditText emailText = findViewById(R.id.emailText);
         final EditText parolaText = findViewById(R.id.parolaText);
 
-
         auth = FirebaseAuth.getInstance();
 
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        /*GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail().build();
+                .requestEmail().build();*/
 
         signInButton = findViewById(R.id.sign_in_button);
 
@@ -62,7 +61,6 @@ public class GirisYapActivity extends AppCompatActivity{
         if(auth.getCurrentUser() != null){
             startActivity(new Intent(GirisYapActivity.this,MainActivity.class));
         }
-
 
         girisButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +84,7 @@ public class GirisYapActivity extends AppCompatActivity{
                             startActivity(new Intent(GirisYapActivity.this,MainActivity.class));
                         }
                         else {
+                            Toast.makeText(getApplicationContext(), "Hatalı E-Posta veya Parola", Toast.LENGTH_SHORT).show();
                             Log.e("Giriş Hatası",task.getException().getMessage());
                         }
                     }
@@ -110,7 +109,7 @@ public class GirisYapActivity extends AppCompatActivity{
 
     }
 
-    @Override
+    /*@Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -122,9 +121,9 @@ public class GirisYapActivity extends AppCompatActivity{
                 firebaseAuthWithGoogle(account);
             }
         }
-    }
+    }*/
 
-    private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
+    /*private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
         // Log.d(TAG, "firebaseAuthWithGooogle:" + acct.getId());
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
         auth.signInWithCredential(credential)
@@ -142,5 +141,6 @@ public class GirisYapActivity extends AppCompatActivity{
                             finish();
                         }
                     }
-                });}
+                });
+    }*/
 }

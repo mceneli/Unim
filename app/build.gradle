@@ -32,4 +32,5 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:9.4.0'
     implementation 'com.google.firebase:firebase-auth:9.4.0'
     implementation 'com.google.firebase:firebase-core:9.4.0'
+    implementation 'com.google.firebase:firebase-messaging:20.1.0'
 }
