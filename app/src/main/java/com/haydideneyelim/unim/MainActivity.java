@@ -17,6 +17,7 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.tabs.TabLayout;
@@ -33,11 +34,14 @@ import com.haydideneyelim.unim.Model.User;
 
 import java.util.ArrayList;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private FirebaseAuth.AuthStateListener authStateListener;
     FirebaseDatabase database;
     DatabaseReference reference;
+    CircleImageView profile_image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("");
 
         final TextView usernameText = findViewById(R.id.Username);
+        profile_image = findViewById(R.id.profile_image);
 
         auth = FirebaseAuth.getInstance();
 
@@ -62,15 +67,21 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
-        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        final FirebaseUser fuser = FirebaseAuth.getInstance().getCurrentUser();
 
         database = FirebaseDatabase.getInstance();
-        reference = database.getReference("Users").child(user.getUid()).child("username");
+        reference = database.getReference("Users").child(fuser.getUid());
+
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String value = dataSnapshot.getValue(String.class);
-                usernameText.setText(value);
+                User user = dataSnapshot.getValue(User.class);
+                usernameText.setText(user.getUsername());
+                if(user.getImageUrl().equals("default")){
+                    profile_image.setImageResource(R.mipmap.ic_launcher);
+                } else {
+                    Glide.with(MainActivity.this).load(user.getImageUrl()).into(profile_image);
+                }
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
