@@ -82,6 +82,7 @@ public class GirisYapActivity extends AppCompatActivity{
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             startActivity(new Intent(GirisYapActivity.this,MainActivity.class));
+                            finish();
                         }
                         else {
                             Toast.makeText(getApplicationContext(), "Hatalı E-Posta veya Parola", Toast.LENGTH_SHORT).show();

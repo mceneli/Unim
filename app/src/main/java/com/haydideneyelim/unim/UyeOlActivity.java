@@ -37,6 +37,7 @@ public class UyeOlActivity extends AppCompatActivity {
 
         if (auth.getCurrentUser() != null) {
             startActivity(new Intent(UyeOlActivity.this, MainActivity.class));
+            finish();
         }
 
         Button uyeButton = findViewById(R.id.uyeOlButton);
@@ -76,6 +77,7 @@ public class UyeOlActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(UyeOlActivity.this, GirisYapActivity.class));
+                finish();
             }
         });
     }

@@ -22,14 +22,22 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.haydideneyelim.unim.Fragments.ChatsFragment;
 import com.haydideneyelim.unim.Fragments.UsersFragment;
+import com.haydideneyelim.unim.Model.User;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private FirebaseAuth.AuthStateListener authStateListener;
+    FirebaseDatabase database;
+    DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
 
-        TextView usernameText = findViewById(R.id.Username);
+        final TextView usernameText = findViewById(R.id.Username);
 
         auth = FirebaseAuth.getInstance();
 
@@ -54,10 +62,20 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
-
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-        usernameText.setText(user.getEmail());
+        database = FirebaseDatabase.getInstance();
+        reference = database.getReference("Users").child(user.getUid()).child("username");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String value = dataSnapshot.getValue(String.class);
+                usernameText.setText(value);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
 
         TabLayout tabLayout = findViewById(R.id.tab_layout);
         ViewPager viewPager = findViewById(R.id.view_pager);
