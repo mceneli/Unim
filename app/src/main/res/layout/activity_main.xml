@@ -34,8 +34,13 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="100dp"
+        android:layout_height="200dp">
 
 
+    </androidx.recyclerview.widget.RecyclerView>
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>
