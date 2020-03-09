@@ -13,11 +13,11 @@ Gerçeklenmemiş adımlarda eksi işareti (-) vardır.
 \+ Oturumu Açık tut  
 
 ### Mesajlaşma Özelliğinin Eklenmesi
-\- Mesajlaşma için veritabanına ekleme yapma  
-\- Soket bağlantısı kurma  
-\- Mesajlaşma ekranı tasarımı  
+\+ Mesajlaşma için veritabanına ekleme yapma  
+\+ Soket bağlantısı kurma  
+\+ Mesajlaşma ekranı tasarımı  
 \- Arkadaş ekleme  
-\- mesaj gönderme  
+\+ Mesaj gönderme  
 
 ### Üniversite Kurumlarının Eklenmesi
 \- Kurumlar/Üniversiteler için veritabanını oluşturma  
