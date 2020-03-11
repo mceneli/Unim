@@ -10,6 +10,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.LinearLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -29,11 +32,18 @@ public class CoursesFragment extends Fragment {
     private RecyclerView recyclerView;
     private FriendsAdapter friendsAdapter;
     private List<User> mUsers;
+    private static final String[] UNIVERSITIES = new String[]{
+            "Yıldız Teknik Üniversitesi", "Boğaziçi Üniversitesi", "İstanbul Teknik Üniversitesi", "İstanbul Üniversitesi", "Marmara Üniversitesi"
+    };
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_courses,container,false);
+
+        AutoCompleteTextView universityList = view.findViewById(R.id.universities_list);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_dropdown_item_1line, UNIVERSITIES);
+        universityList.setAdapter(adapter);
+        //https://www.youtube.com/watch?v=wOw8V-f9Xpc
 
         recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);

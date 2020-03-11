@@ -5,21 +5,37 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.ChatsFragment">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="10dp"
+        android:layout_height="10dp" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="Üniversitenizi Seçiniz" />
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="54dp"
+        android:gravity="center"
+        android:text="Üniversite Ekle"
+        android:textSize="30dp"
+        android:textStyle="bold" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+        android:id="@+id/universities_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="52dp"
+        android:hint="Üniversite adı"
+        android:textSize="30dp" />
 
 </RelativeLayout>
