@@ -30,6 +30,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.haydideneyelim.unim.Fragments.ChatsFragment;
 import com.haydideneyelim.unim.Fragments.UsersFragment;
+import com.haydideneyelim.unim.Fragments.CoursesFragment;
 import com.haydideneyelim.unim.Model.User;
 
 import java.util.ArrayList;
@@ -95,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
         viewPagerAdapter.addFragment(new ChatsFragment(),"Sohbet");
         viewPagerAdapter.addFragment(new UsersFragment(),"Kullanıcılar");
+        viewPagerAdapter.addFragment(new CoursesFragment(),"Dersler");
 
         viewPager.setAdapter(viewPagerAdapter);
 
